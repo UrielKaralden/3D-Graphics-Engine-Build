@@ -70,7 +70,7 @@ public:
 	Vector RotateYZ(const double g);
 
 	// Scaling Method
-	Vector ScaleXYZ(const double a, const double b, const double c);
+	Vector Scale(const double a, const double b, const double c);
 
 	// Observer Methods
 	double x() const {return x_;}

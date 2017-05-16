@@ -33,6 +33,7 @@ Vector Point::SubtractPointFromPoint(const Point& p)
 	return v;
 }
 
+// Point Setting Method
 void SetPointToPoint(const Point& p)
 {
 	this->x_ = p.x();
@@ -100,7 +101,7 @@ Vector Vector::RotateYZ(const double g)
 }
 
 //Vector Scaling Method
-Vector Vector::ScaleXYZ(const double a, const double b, const double c)
+Vector Vector::Scale(const double a, const double b, const double c)
 {
 	this->x_ = a * this->x_;
 	this->y_ = b * this->y_;
