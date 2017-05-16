@@ -91,3 +91,13 @@ Vector Vector::RotateYZ(const double g)
 
 	return *this;
 }
+
+//Vector Scaling Method
+Vector Vector::ScaleXYZ(const double a, const double b, const double c)
+{
+	this->x_ = a * this->x_;
+	this->y_ = b * this->y_;
+	this->z_ = c * this->z_;
+
+	return *this;
+}

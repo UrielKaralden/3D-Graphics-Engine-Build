@@ -66,6 +66,9 @@ public:
 	Vector RotateXZ(const double g);
 	Vector RotateYZ(const double g);
 
+	// Scaling Method
+	Vector ScaleXYZ(const double a, const double b, const double c);
+
 	// Observer Methods
 	double x() const {return x_;}
 	double y() const {return y_;}
