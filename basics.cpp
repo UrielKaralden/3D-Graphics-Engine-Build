@@ -6,6 +6,7 @@
 #include "basics.hpp"
 
 
+
 // Point Class Constructor
 Point::Point(double x, double y, double z): x_(x),y_(y),z_(z){}
 
@@ -49,6 +50,7 @@ Vector Vector::AddVectorToVector(const Vector& v)
 	this->x_ = this->x()+v.x();
 	this->y_ = this->y()+v.y();
 	this->z_ = this->z()+v.z();
+
 	return *this; 
 }
 
@@ -56,4 +58,36 @@ Vector Vector::SubtractVectorFromVector(const Vector& v)
 {
 	Vector w(this->x() - v.x(), this->y() - v.y(), this->z() - v.z());
 	return w;
+}
+
+// Vector Rotating Methods
+
+Vector Vector::RotateXY(const double g)
+{
+	double rad = g * (M_PI / 180);
+
+	this->x_ = (std::cos(rad) * this->x_) - (std::sin(rad) * this->x_);
+	this->y_ = (std::sin(rad) * this->y_) + (std::cos(rad) * this->y_);
+
+	return *this;
+}
+
+Vector Vector::RotateXZ(const double g)
+{
+	double rad = g * (M_PI / 180);
+
+	this->x_ = (std::cos(rad) * this->x_) + (std::sin(rad) * this->z_);
+	this->y_ = - (std::sin(rad) * this->x_) + (std::cos(rad) * this->z_);
+
+	return *this;
+}
+
+Vector Vector::RotateYZ(const double g)
+{
+	double rad = g * (M_PI / 180);
+
+	this->y_ = (std::cos(rad) * this->y_) - (std::sin(rad) * this->z_);
+	this->z_ = (std::sin(rad) * this->y_) + (std::cos(rad) * this->z_);
+
+	return *this;
 }

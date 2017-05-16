@@ -7,6 +7,8 @@
 #define BASICS_HPP_
 
 #include <iostream>	// Used for cin and cout
+#include <math.h> // Used for math functions
+
 
 // Previous declaration of Vector
 class Vector;
@@ -58,6 +60,11 @@ public:
 
 	Vector AddVectorToVector(const Vector& v);
 	Vector SubtractVectorFromVector(const Vector& v);
+
+	// Rotating Methods
+	Vector RotateXY(const double g);
+	Vector RotateXZ(const double g);
+	Vector RotateYZ(const double g);
 
 	// Observer Methods
 	double x() const {return x_;}
