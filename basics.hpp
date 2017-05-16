@@ -25,9 +25,9 @@ public:
 	double y() {return y_;}
 	double z() {return z_;}
 
-	Point& AddVectorToPoint(const Vector& v);
-	Point& SubtractVectorFromPoint(const Vector& v);
-	Vector& SubtractPointFromPoint(const Point& p);
+	Point AddVectorToPoint(const Vector& v);
+	Point SubtractVectorFromPoint(const Vector& v);
+	Vector SubtractPointFromPoint(const Point& p);
 
 	// Observer Methods
 	double x() const {return x_;}
@@ -56,8 +56,8 @@ public:
 	double y() {return y_;}
 	double z() {return z_;}
 
-	Vector& AddVectorToVector(const Vector& v);
-	Vector& SubtractVectorFromVector(const Vector& v);
+	Vector AddVectorToVector(const Vector& v);
+	Vector SubtractVectorFromVector(const Vector& v);
 
 	// Observer Methods
 	double x() const {return x_;}

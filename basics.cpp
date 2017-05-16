@@ -46,9 +46,9 @@ Vector::Vector(double x, double y, double z): x_(x),y_(y),z_(z){}
 // Vector Modifier Methods
 Vector Vector::AddVectorToVector(const Vector& v)
 {
-	this->x_ = this->x()-v.x();
-	this->y_ = this->y()-v.y();
-	this->z_ = this->z()-v.z();
+	this->x_ = this->x()+v.x();
+	this->y_ = this->y()+v.y();
+	this->z_ = this->z()+v.z();
 	return *this; 
 }
 
