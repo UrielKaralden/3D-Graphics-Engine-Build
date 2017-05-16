@@ -33,6 +33,13 @@ Vector Point::SubtractPointFromPoint(const Point& p)
 	return v;
 }
 
+void SetPointToPoint(const Point& p)
+{
+	this->x_ = p.x();
+	this->y_ = p.y();
+	this->z_ = p.z();
+}
+
 // Point Observer Methods
 void Point::drawPoint() const
 {

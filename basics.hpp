@@ -31,6 +31,9 @@ public:
 	Point SubtractVectorFromPoint(const Vector& v);
 	Vector SubtractPointFromPoint(const Point& p);
 
+	// Point Setting Method
+	void SetPointToPoint(const Point& p);
+
 	// Observer Methods
 	double x() const {return x_;}
 	double y() const {return y_;}
