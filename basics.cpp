@@ -5,48 +5,55 @@
 
 #include "basics.hpp"
 
+
 // Point Class Constructor
-Point::Point(double x = 0.0, double y = 0.0, double z = 0.0): x_(x),y_(y),z_(z){}
+Point::Point(double x, double y, double z): x_(x),y_(y),z_(z){}
 
 // Point Modifier Methods
-Point& Point::AddVectorToPoint(const Vector& v)
+Point Point::AddVectorToPoint(const Vector& v)
 {
-	Point p(this->x() + v.x(), this->y() + v.y(), this->z() + v.z());
-	return *p; 
+	this->x_ = this->x()+v.x();
+	this->y_ = this->y()+v.y();
+	this->z_ = this->z()+v.z();
+	return *this; 
 }
 
-Point& Point::SubtractVectorFromPoint(const Vector& v)
+Point Point::SubtractVectorFromPoint(const Vector& v)
 {
-	Point p(this->x() - v.x(), this->y() - v.y(), this->z() - v.z());
-	return *p;
+	this->x_ = this->x()-v.x();
+	this->y_ = this->y()-v.y();
+	this->z_ = this->z()-v.z();
+	return *this; 
 }
 
-Vector& Point::SubtractPointFromPoint(const Point& p)
+Vector Point::SubtractPointFromPoint(const Point& p)
 {
 	Vector v(this->x() - p.x(), this->y() - p.y(), this->z() - p.z());
-	return *v;
+	return v;
 }
 
 // Point Observer Methods
-void drawPoint() const
+void Point::drawPoint() const
 {
-	cout << endl << "Coordinate X: " << this->x() << endl 
-				 << "Coordinate Y: " << this->y() << endl 
-				 << "Coordinate Z: " << this->z() << endl << endl;
+	std::cout << std::endl << "Coordinate X: " << this->x() << std::endl 
+				 << "Coordinate Y: " << this->y() << std::endl 
+				 << "Coordinate Z: " << this->z() << std::endl << std::endl;
 }
 
 // Vector Class Constructor
-Vector::Vector(double x = 0.0, double y = 0.0, double z = 0.0): x_(x),y_(y),z_(z){}
+Vector::Vector(double x, double y, double z): x_(x),y_(y),z_(z){}
 
 // Vector Modifier Methods
-Vector& Vector::AddVectorToVector(const Vector& v)
+Vector Vector::AddVectorToVector(const Vector& v)
 {
-	Vector v(this->x() + v.x(), this->y() + v.y(), this->z() + v.z());
-	return *v;
+	this->x_ = this->x()-v.x();
+	this->y_ = this->y()-v.y();
+	this->z_ = this->z()-v.z();
+	return *this; 
 }
 
-Vector& Vector::SubtractVectorFromVector(const Vector& v)
+Vector Vector::SubtractVectorFromVector(const Vector& v)
 {
-	Vector v(this->x() - v.x(), this->y() - v.y(), this->z() - v.z());
-	return *v;
+	Vector w(this->x() - v.x(), this->y() - v.y(), this->z() - v.z());
+	return w;
 }
